@@ -15,7 +15,7 @@ export class HomePage {
   numero: string; 
   textarea: string; 
   asfalto: string;
-  outros: string; 
+  secretarias: string; 
  
   constructor(public navCtrl: NavController, private camera: Camera, private emailComposer: EmailComposer){ }
 
@@ -41,6 +41,21 @@ export class HomePage {
 
   sendEmail(){
 
+    if(this.endereco == undefined){
+      alert('Preencha as informações do campo Endereço');
+      return;
+    }
+
+    if(this.numero == undefined){
+      alert('Preencha as informações do campo Número');
+      return; 
+    }
+
+    if(this.textarea == undefined){
+      alert('Descreva o Ocorrido');
+      return; 
+    }
+
     let email = {
       to: 'alexandretuti@gmail.com',
       cc: 'alexandretuti@gmail.com',
@@ -48,7 +63,7 @@ export class HomePage {
         this.currentImage
       ],
       subject: 'SACI-Sistema de atendimento ao cidadão Itapolitano',
-      body: 'Endereco:' + this.endereco + ' Numero: ' + this.numero + ' Descrição do ocorrido: ' + this.textarea ,
+      body: 'Endereco:' + this.endereco + ' Numero: ' + this.numero + '<br> Descrição do ocorrido: ' + this.textarea ,
       isHtml: true
     };
 
@@ -58,17 +73,11 @@ export class HomePage {
 
   cleanForms(){
 
-    alert('Endereco:' + this.endereco + ' Numero: ' + this.numero + ' Descrição do ocorrido: ' + this.textarea + ' Asfalto' + this.asfalto + 'Outros' + this.outros ); 
+    //alert('Endereco:' + this.endereco + ' Numero: ' + this.numero + ' Descrição do ocorrido: ' + this.textarea + ' Asfalto' + this.asfalto + 'Secretarias' + this.secretarias ); 
 
     this.endereco = "";
     this.numero = "";
     this.textarea = "";
-
-    if(this.asfalto == 'true' ) {
-      alert('Asfalto');
-    }else{
-      alert('Outros');
-    }
 
   }
 

@@ -3,54 +3,52 @@
 
     <form>
 
-        <ion-radio-group>
-            <ion-row>
-
-                <ion-col>
+        <ion-list>
+            <ion-radio-group allow-empty-selection="false">
+                <ion-row>
                     <ion-item>
                         <ion-label>Asfalto</ion-label>
-                        <ion-radio name="asfalto" [(ngModel)]="asfalto" value="asfato"></ion-radio>
+                        <ion-radio name="asfalto" [(ngModel)]="asfalto" value="asfato" checked></ion-radio>
                     </ion-item>
-                </ion-col>
 
-                <ion-col>
                     <ion-item>
-                        <ion-label>Outros</ion-label>
-                        <ion-radio name="outros" [(ngModel)]="outros" value="outros"></ion-radio>
+                        <ion-label>Secretarias</ion-label>
+                        <ion-radio name="secretarias" [(ngModel)]="secretarias" value="secretarias"></ion-radio>
                     </ion-item>
-                </ion-col>
-
-            </ion-row>
-
-        </ion-radio-group>
+                </ion-row>
+            </ion-radio-group>
+        </ion-list>
 
         <ion-item>
             <ion-label position="floating">Endereço</ion-label>
-            <ion-input name="endereco" [(ngModel)]="endereco"></ion-input>
+            <ion-input required name="endereco" [(ngModel)]="endereco"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label position="floating">Número</ion-label>
-            <ion-input name="numero" [(ngModel)]="numero" type="number"></ion-input>
+            <ion-input required type="number" name="numero" [(ngModel)]="numero"></ion-input>
         </ion-item>
 
         <ion-label>Descreva o ocorrido:</ion-label>
 
         <ion-item>
-            <ion-textarea name="textarea" [(ngModel)]="textarea" clear-on-edit="true" type="text" rows="6" cols="20" placeholder=""></ion-textarea>
+            <ion-textarea required name="textarea" [(ngModel)]="textarea" clear-on-edit="true" type="text" rows="6" cols="20"
+                placeholder=""></ion-textarea>
         </ion-item>
+
         
-        <ion-row>
-            <ion-button outline  (click)="captureImage()" size="default" type="submit" color="medium">Capturar imagem</ion-button>
-            <ion-button outline  (click)="sendEmail()" size="default" type="submit" color="medium">Enviar email</ion-button>
-            <ion-button (click)="cleanForms()" size="default" type="reset" color="medium">Limpar</ion-button>
-            <ion-button (click)="exitApp()" size="default" color="medium">Fechar</ion-button>
+        <ion-button expand="full" (click)="captureImage()" type="submit" color="primary" size="small">Capturar imagem</ion-button>
+        <ion-button expand="full"  (click)="sendEmail()" size="small" type="submit" color="primary">Enviar email</ion-button>
+        
+        <ion-row>    
+            <ion-button (click)="cleanForms()" size="small" type="reset" color="dark">Limpar</ion-button>
+            <ion-button (click)="exitApp()" size="small" color="dark">Fechar</ion-button>
         </ion-row>
 
         <ion-card>
             <ion-card-header>Imagem selecionada</ion-card-header>
             <ion-card-content>
-                <img [src]="currentImage" *ngIf="currentImage"/>
+                <img [src]="currentImage" *ngIf="currentImage" />
             </ion-card-content>
         </ion-card>
 
