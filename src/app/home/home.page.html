@@ -7,17 +7,16 @@
             <ion-row>
 
                 <ion-col>
-
                     <ion-item>
                         <ion-label>Asfalto</ion-label>
-                        <ion-radio value="asfato"></ion-radio>
+                        <ion-radio name="asfalto" [(ngModel)]="asfalto" value="asfato"></ion-radio>
                     </ion-item>
                 </ion-col>
 
                 <ion-col>
                     <ion-item>
-                        <ion-label>Iluminação</ion-label>
-                        <ion-radio value="iluminacao"></ion-radio>
+                        <ion-label>Outros</ion-label>
+                        <ion-radio name="outros" [(ngModel)]="outros" value="outros"></ion-radio>
                     </ion-item>
                 </ion-col>
 
@@ -27,27 +26,33 @@
 
         <ion-item>
             <ion-label position="floating">Endereço</ion-label>
-            <ion-input name="endereco" type="text"></ion-input>
+            <ion-input name="endereco" [(ngModel)]="endereco"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label position="floating">Número</ion-label>
-            <ion-input name="numero" type="number"></ion-input>
+            <ion-input name="numero" [(ngModel)]="numero" type="number"></ion-input>
         </ion-item>
 
         <ion-label>Descreva o ocorrido:</ion-label>
 
         <ion-item>
-            <ion-textarea clear-on-edit="true" type="text" rows="6" cols="20" placeholder=""></ion-textarea>
+            <ion-textarea name="textarea" [(ngModel)]="textarea" clear-on-edit="true" type="text" rows="6" cols="20" placeholder=""></ion-textarea>
         </ion-item>
         
-        <ion-input name="numero" type="file"></ion-input>
-
         <ion-row>
-            <ion-button outline size="default" type="submit" color="medium">Enviar</ion-button>
-            <ion-button size="default" type="reset" color="medium">Limpar</ion-button>
+            <ion-button outline  (click)="captureImage()" size="default" type="submit" color="medium">Capturar imagem</ion-button>
+            <ion-button outline  (click)="sendEmail()" size="default" type="submit" color="medium">Enviar email</ion-button>
+            <ion-button (click)="cleanForms()" size="default" type="reset" color="medium">Limpar</ion-button>
             <ion-button (click)="exitApp()" size="default" color="medium">Fechar</ion-button>
         </ion-row>
+
+        <ion-card>
+            <ion-card-header>Imagem selecionada</ion-card-header>
+            <ion-card-content>
+                <img [src]="currentImage" *ngIf="currentImage"/>
+            </ion-card-content>
+        </ion-card>
 
     </form>
 

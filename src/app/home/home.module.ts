@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +21,13 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers: [
+    Camera,
+    EmailComposer,
+  ]
+
 })
+
+
 export class HomePageModule {}
