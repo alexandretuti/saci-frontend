@@ -1,5 +1,5 @@
 <ion-content padding>
-    <h3>SACI-Sistema de atendimento ao cidadão Itapolitano</h3>
+    <h3>SACI-Sistema de atendimento ao cidadão Itapolitano - Versão Alfa</h3>
 
     <form>
 
@@ -36,22 +36,19 @@
                 placeholder=""></ion-textarea>
         </ion-item>
 
-        
         <ion-button expand="full" (click)="captureImage()" type="submit" color="primary" size="small">Capturar imagem</ion-button>
-        <ion-button expand="full"  (click)="sendEmail()" size="small" type="submit" color="primary">Enviar email</ion-button>
+        <ion-button expand="full" (click)="sendEmail()" size="small" type="submit" color="primary">Enviar email</ion-button>
+        <ion-button expand="full" (click)="cleanForms()" size="small" type="reset" color="dark">Limpar</ion-button>
+        <ion-button expand="full" (click)="exitApp()" size="small" color="dark">Fechar</ion-button>
         
-        <ion-row>    
-            <ion-button (click)="cleanForms()" size="small" type="reset" color="dark">Limpar</ion-button>
-            <ion-button (click)="exitApp()" size="small" color="dark">Fechar</ion-button>
-        </ion-row>
-
-        <ion-card>
-            <ion-card-header>Imagem selecionada</ion-card-header>
-            <ion-card-content>
-                <img [src]="currentImage" *ngIf="currentImage" />
-            </ion-card-content>
-        </ion-card>
-
+        <!--
+            <ion-card>
+                <ion-card-header>Imagem selecionada</ion-card-header>
+                <ion-card-content>
+                    <img [src]="currentImage" *ngIf="currentImage" />
+                </ion-card-content>
+            </ion-card>
+        --> 
     </form>
 
 </ion-content>

@@ -58,12 +58,12 @@ export class HomePage {
 
     let email = {
       to: 'alexandretuti@gmail.com',
-      cc: 'alexandretuti@gmail.com',
+      cc: 'alexandretuti@gmail.com;Salata.gislaine@ig.com.br;joaoantoniofreitas@yahoo.com.br;anderson.ap.semensato@gmail.com',
       attachments: [
         this.currentImage
       ],
-      subject: 'SACI-Sistema de atendimento ao cidadão Itapolitano',
-      body: 'Endereco:' + this.endereco + ' Numero: ' + this.numero + '<br> Descrição do ocorrido: ' + this.textarea ,
+      subject: 'TESTE-SACI-Sistema de atendimento ao cidadão Itapolitano',
+      body: 'TESTE<br> <b>Endereco:</b>' + this.endereco + '<br> <b>Numero:</b> ' + this.numero + '<br> <b>Descrição do ocorrido:</b> ' + this.textarea ,
       isHtml: true
     };
 
