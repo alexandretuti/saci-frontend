@@ -69,15 +69,16 @@ export class HomePage {
 
     this.emailComposer.open(email);
 
+    this.cleanForms();
+
   }
 
   cleanForms(){
 
-    //alert('Endereco:' + this.endereco + ' Numero: ' + this.numero + ' Descrição do ocorrido: ' + this.textarea + ' Asfalto' + this.asfalto + 'Secretarias' + this.secretarias ); 
-
     this.endereco = "";
     this.numero = "";
     this.textarea = "";
+    this.currentImage = null; 
 
   }
 
