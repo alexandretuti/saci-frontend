@@ -21,18 +21,18 @@
 
         <ion-item>
             <ion-label position="floating">Endereço</ion-label>
-            <ion-input required name="endereco" [(ngModel)]="endereco"></ion-input>
+            <ion-input name="endereco" [(ngModel)]="endereco"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label position="floating">Número</ion-label>
-            <ion-input required type="number" name="numero" [(ngModel)]="numero"></ion-input>
+            <ion-input type="number" name="numero" [(ngModel)]="numero"></ion-input>
         </ion-item>
 
         <ion-label>Descreva o ocorrido:</ion-label>
 
         <ion-item>
-            <ion-textarea required name="textarea" [(ngModel)]="textarea" clear-on-edit="true" type="text" rows="6" cols="20"
+            <ion-textarea name="textarea" [(ngModel)]="textarea" clear-on-edit="true" type="text" rows="6" cols="20"
                 placeholder=""></ion-textarea>
         </ion-item>
 

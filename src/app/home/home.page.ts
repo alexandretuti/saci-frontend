@@ -64,15 +64,12 @@ export class HomePage {
       ],
       subject: 'TESTE-SACI-Sistema de atendimento ao cidadão Itapolitano',
       body: 'TESTE<br> <b>Endereco:</b>' + this.endereco + '<br> <b>Numero:</b> ' + this.numero + '<br> <b>Descrição do ocorrido:</b> ' + this.textarea ,
-      isHtml: true
+      isHtml: true,
+      app: 'gmail'
     };
      
-    this.emailComposer.addAlias('gmail', 'com.google.android.gm');
-
     this.emailComposer.open(email);
-
-    
-    
+ 
     this.cleanForms();
 
   }
