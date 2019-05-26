@@ -14,8 +14,7 @@ export class HomePage {
   endereco: string; 
   numero: string; 
   textarea: string; 
-  asfalto: string;
-  secretarias: string; 
+  place: string; 
  
   constructor(public navCtrl: NavController, private camera: Camera, private emailComposer: EmailComposer){ }
 
@@ -40,6 +39,11 @@ export class HomePage {
   }
 
   sendEmail(){
+  
+    if(this.place == undefined){
+      alert('Selecione uma categoria');
+      return;
+    }
 
     if(this.endereco == undefined){
       alert('Preencha as informações do campo Endereço');
@@ -62,8 +66,8 @@ export class HomePage {
       attachments: [
         this.currentImage
       ],
-      subject: 'TESTE-SACI-Sistema de atendimento ao cidadão Itapolitano',
-      body: 'TESTE<br> <b>Endereco:</b>' + this.endereco + '<br> <b>Numero:</b> ' + this.numero + '<br> <b>Descrição do ocorrido:</b> ' + this.textarea ,
+      subject: 'TESTE-SACI-Sistema de atendimento ao cidadão Itapolitano - Versão 1.2',
+      body: '<br> Categoria selecionada:' + this.place + ' <br> <b>Endereco:</b>' + this.endereco + '<br> <b>Numero:</b> ' + this.numero + '<br> <b>Descrição do ocorrido:</b> ' + this.textarea ,
       isHtml: true,
       app: 'gmail'
     };
@@ -80,6 +84,7 @@ export class HomePage {
     this.numero = "";
     this.textarea = "";
     this.currentImage = null; 
+    this.place = "";
 
   }
 

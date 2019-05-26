@@ -1,22 +1,20 @@
 <ion-content padding>
-    <h3>SACI-Sistema de atendimento ao cidadão Itapolitano - Versão Alfa</h3>
+    <h3>SACI-Sistema de atendimento ao cidadão Itapolitano - Versão 1.2</h3>
 
     <form>
 
         <ion-list>
-            <ion-radio-group allow-empty-selection="false">
-                <ion-row>
-                    <ion-item>
-                        <ion-label>Asfalto</ion-label>
-                        <ion-radio name="asfalto" [(ngModel)]="asfalto" value="asfato" checked></ion-radio>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-label>Secretarias</ion-label>
-                        <ion-radio name="secretarias" [(ngModel)]="secretarias" value="secretarias"></ion-radio>
-                    </ion-item>
-                </ion-row>
-            </ion-radio-group>
+            <!--<ion-list-header>Selecione</ion-list-header>-->
+            <ion-item>
+                <ion-label>Categoria</ion-label>
+                <ion-select name="place" [(ngModel)]="place" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Listar">
+                    <ion-select-option value="arvore">Árvore</ion-select-option>
+                    <ion-select-option value="buraco">Buraco</ion-select-option>
+                    <ion-select-option value="praca">Praças</ion-select-option>
+                    <ion-select-option value="terreno">Terreno sujo</ion-select-option>
+                    <ion-select-option value="outros">Outros</ion-select-option>
+                </ion-select>
+            </ion-item>
         </ion-list>
 
         <ion-item>
@@ -36,19 +34,13 @@
                 placeholder=""></ion-textarea>
         </ion-item>
 
-        <ion-button expand="full" (click)="captureImage()" type="submit" color="primary" size="small">Capturar imagem</ion-button>
-        <ion-button expand="full" (click)="sendEmail()" size="small" type="submit" color="primary">Enviar email</ion-button>
+        <ion-button expand="full" (click)="captureImage()" type="submit" color="primary" size="small">Capturar imagem
+        </ion-button>
+        <ion-button expand="full" (click)="sendEmail()" size="small" type="submit" color="primary">Enviar email
+        </ion-button>
         <ion-button expand="full" (click)="cleanForms()" size="small" type="reset" color="dark">Limpar</ion-button>
         <ion-button expand="full" (click)="exitApp()" size="small" color="dark">Fechar</ion-button>
-        
-        <!--
-            <ion-card>
-                <ion-card-header>Imagem selecionada</ion-card-header>
-                <ion-card-content>
-                    <img [src]="currentImage" *ngIf="currentImage" />
-                </ion-card-content>
-            </ion-card>
-        --> 
+
     </form>
 
 </ion-content>
