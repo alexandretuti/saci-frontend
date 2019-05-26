@@ -66,13 +66,17 @@ export class HomePage {
       body: 'TESTE<br> <b>Endereco:</b>' + this.endereco + '<br> <b>Numero:</b> ' + this.numero + '<br> <b>Descrição do ocorrido:</b> ' + this.textarea ,
       isHtml: true
     };
+     
+    this.emailComposer.addAlias('gmail', 'com.google.android.gm');
 
     this.emailComposer.open(email);
 
+    
+    
     this.cleanForms();
 
   }
-
+  
   cleanForms(){
 
     this.endereco = "";
